@@ -1,8 +1,11 @@
-import './App.css';
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import { default as APIResponse } from './api/APICall.js';
 import CurrentWeather from './components/CurrentWeather.js';
 import ForecastWeather from './components/ForecastWeather.js';
+
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -31,11 +34,39 @@ class App extends Component {
       return (<h1>Loading</h1>)
     }
 
-    return (
-      <div>
-        <h1 className="page-title">Weather @ Closelink</h1>
+    let title = (
+      <>Weather @ Closelink</>
+    )
+    if (window.location.pathname !== '/') {
+      title = (
+        <a href="/">Weather @ Closelink</a>
+      )
+    }
+
+
+    // XXX hacky: build views
+    const Home = () => (
+      <>
         <CurrentWeather weather={this.state.APIResponse.current} />
         <ForecastWeather weather={this.state.APIResponse.daily} />
+      </>
+    );
+    const CurrentWeatherRoute = () => (
+        <CurrentWeather weather={this.state.APIResponse.current} />
+    );
+
+    const ForecastWeatherRoute = () => (
+        <ForecastWeather weather={this.state.APIResponse.daily} />
+    );
+
+    return (
+      <div>
+        <h1 className="page-title">{title}</h1>
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route path="/current" component={CurrentWeatherRoute} />
+          <Route path="/forecast" component={ForecastWeatherRoute} />
+        </Router>
       </div>
     );
   }
