@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <div>
-        <h1>Closelink Weather</h1>
+        <h1 className="page-title">Weather @ Closelink</h1>
 
         <div className="current-weather">
           <h2 className="current-weather__headline">Current Weather</h2>

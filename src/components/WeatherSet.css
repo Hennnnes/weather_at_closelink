@@ -1,7 +1,14 @@
 .weatherset {
+	align-items: center;
 	border: 1px solid #000;
 	display: flex;
-	align-items: center;
+	flex-wrap: wrap;
+	padding: 15px;
+
+}
+
+.weatherset__title {
+	min-width: 100%;
 }
 
 .weatherset__image {
@@ -15,4 +22,17 @@
 
 .weatherset__contents {
 	display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+	.weatherset {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.weatherset__contents span {
+		display: block;
+	}
 }

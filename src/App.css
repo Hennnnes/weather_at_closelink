@@ -1,7 +1,13 @@
+.page-title,
 .current-weather,
 .weather-forecast {
 	max-width: 600px;
 	margin: 0 auto 50px auto;
+}
+
+.page-title {
+	margin-bottom: 30px;
+	margin-top: 30px;
 }
 
 .current-weather__headline {
