@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import { default as APIResponse } from './api/APICall.js';
+import CurrentWeather from './components/CurrentWeather.js';
+import ForecastWeather from './components/ForecastWeather.js';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +34,18 @@ class App extends Component {
     return (
       <div>
         <h1>Closelink Weather</h1>
+
+        <div>
+          <h2>Current Weather</h2>
+          <CurrentWeather weather={this.state.APIResponse.current} />
+        </div>
+
+        <div>
+          <h2>Weather Forecast</h2>
+          {this.state.APIResponse.daily.map((weather, i) => {
+            return (<ForecastWeather key={i} weather={weather} />)
+          })}
+        </div>
       </div>
     );
   }
