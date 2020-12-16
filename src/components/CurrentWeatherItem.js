@@ -1,6 +1,6 @@
 import WeatherSet from './WeatherSet.js';
 
-const CurrentWeather = (props) => {
+const CurrentWeatherItem = (props) => {
 	const icon = props.weather.weather[0].icon;
 	const description = props.weather.weather[0].description;
 	const temp = Math.round(props.weather.temp);
@@ -11,4 +11,4 @@ const CurrentWeather = (props) => {
 	)
 }
 
-export default CurrentWeather;
+export default CurrentWeatherItem;
