@@ -18,8 +18,16 @@ const WeatherSet = (props) => {
 			</p>
 		)
 	}
+	let title = '';
+	if (props.title) {
+		title = (
+			<h3 className="weatherset__title">{ props.title }</h3>
+		)
+	}
+
 	return (
 		<div className="weatherset">
+			{title}
 			<img src={`http://openweathermap.org/img/wn/${props.icon}@4x.png`} alt={props.description} className="weatherset__image"/>
 			{content}
 		</div>

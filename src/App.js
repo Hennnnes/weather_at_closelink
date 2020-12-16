@@ -43,7 +43,7 @@ class App extends Component {
         <div className="weather-forecast">
           <h2 className="weather-forecast__headline">Weather Forecast</h2>
           {this.state.APIResponse.daily.map((weather, i) => {
-            return (<ForecastWeather key={i} weather={weather} />)
+            return (<ForecastWeather key={i} weather={weather} index={i} />)
           })}
         </div>
       </div>
