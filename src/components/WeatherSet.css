@@ -1,0 +1,18 @@
+.weatherset {
+	border: 1px solid #000;
+	display: flex;
+	align-items: center;
+}
+
+.weatherset__image {
+	flex-grow: 1;
+	max-width: 12rem;
+}
+
+.weather-forecast .weatherset__image {
+	max-width: 5rem;
+}
+
+.weatherset__contents {
+	display: inline-block;
+}

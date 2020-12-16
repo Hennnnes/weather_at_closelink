@@ -35,13 +35,13 @@ class App extends Component {
       <div>
         <h1>Closelink Weather</h1>
 
-        <div>
-          <h2>Current Weather</h2>
+        <div className="current-weather">
+          <h2 className="current-weather__headline">Current Weather</h2>
           <CurrentWeather weather={this.state.APIResponse.current} />
         </div>
 
-        <div>
-          <h2>Weather Forecast</h2>
+        <div className="weather-forecast">
+          <h2 className="weather-forecast__headline">Weather Forecast</h2>
           {this.state.APIResponse.daily.map((weather, i) => {
             return (<ForecastWeather key={i} weather={weather} />)
           })}

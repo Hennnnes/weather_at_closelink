@@ -1,0 +1,20 @@
+.current-weather,
+.weather-forecast {
+	max-width: 600px;
+	margin: 0 auto 50px auto;
+}
+
+.current-weather__headline {
+	margin-bottom: 20px; /* manually set margin here because the current weather has no grid */
+}
+
+.weather-forecast {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.weather-forecast__headline {
+	grid-column: span 2;
+}

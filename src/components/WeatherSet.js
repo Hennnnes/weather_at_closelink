@@ -1,3 +1,5 @@
+import './WeatherSet.css';
+
 const WeatherSet = (props) => {
 	return (
 		<div>
